@@ -12,5 +12,6 @@ jobs:
         with:
           github-token: ${{github.token}}
           script: |
+            const fs = require("fs");
             console.log(JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH)));
             console.log(process.env.GITHUB_EVENT_PATH)
